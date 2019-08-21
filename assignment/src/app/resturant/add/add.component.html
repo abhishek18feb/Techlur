@@ -1,0 +1,30 @@
+<div class="container">
+	<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+		<div class="form-group">
+			<label for="exampleInputEmail1">First Name</label>
+			<input type="text" class="form-control" formControlName="firstName"  placeholder="Enter First Name">
+			<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">First Name is Required.</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Last Name</label>
+			<input type="text" class="form-control" formControlName="lastName" placeholder="Last Name">
+			<div *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)" class="alert alert-danger">Last Name is required.</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Guest</label>
+			<input type="text" class="form-control" formControlName="guest" placeholder="Guest">
+			<div *ngIf="guest.invalid && (guest.dirty || guest.touched)" class="alert alert-danger">Guest is required.</div>
+		</div>
+		<div class="form-group">
+			<label for="exampleInputPassword1">Check In</label>
+			<input type="text" class="form-control" formControlName="checkIn" placeholder="Check In">
+			<div *ngIf="guest.invalid && (guest.dirty || guest.touched)" class="alert alert-danger">Guest is required.</div>
+		</div>
+		<div class="form-group">
+            <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+        </div>
+		
+	</form>
+</div>
