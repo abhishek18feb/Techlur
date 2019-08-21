@@ -15,8 +15,6 @@ export class ListComponent implements OnInit {
   data:any;
   serverError: any;
   listItems: any;
-    public popoverTitle: string = 'Are you sure';
-  public popoverMessage: string = 'You want to delete this category';
   constructor(public fb: FormBuilder, public __restaurant: RestaurantService, public toastr: ToastrService, public _router: Router) { }
 
   ngOnInit() { 
@@ -43,7 +41,7 @@ export class ListComponent implements OnInit {
     console.log(id);
     this.__restaurant.deleteRecord(id).subscribe(
       res=> {
-        this.toastr.success('Category Deleted Successfully', 'Success :)');
+        this.toastr.success('Record Deleted Successfully', 'Success :)');
         this.fetchData();
       },
       err => {
